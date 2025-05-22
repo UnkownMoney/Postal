@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Postal Service Webapp</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Postal Service Webapp</h1>
+
+    <div id="login">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="loginBtn">Login</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div id="app" style="display:none;">
+        <h2>Welcome, <span id="userRole"></span></h2>
+
+        <div id="shipmentForm">
+            <h3>Create Shipment</h3>
+            <input type="number" id="weight" placeholder="Weight (kg)" />
+            <select id="shippingMethod">
+                <option value="standard">Standard</option>
+                <option value="expedited">Expedited</option>
+            </select>
+            <h4>From Address</h4>
+            <input type="text" id="fromName" placeholder="Name" />
+            <input type="text" id="fromStreet" placeholder="Street" />
+            <input type="text" id="fromCity" placeholder="City" />
+            <input type="text" id="fromState" placeholder="State" />
+            <input type="text" id="fromZip" placeholder="Zip" />
+            <input type="text" id="fromCountry" placeholder="Country" />
+            <h4>To Address</h4>
+            <input type="text" id="toName" placeholder="Name" />
+            <input type="text" id="toStreet" placeholder="Street" />
+            <input type="text" id="toCity" placeholder="City" />
+            <input type="text" id="toState" placeholder="State" />
+            <input type="text" id="toZip" placeholder="Zip" />
+            <input type="text" id="toCountry" placeholder="Country" />
+            <button id="createShipmentBtn">Create Shipment</button>
+            <p id="shipmentMessage"></p>
+        </div>
+
+        <div id="searchForm">
+            <h3>Search Shipments</h3>
+            <input type="text" id="searchQuery" placeholder="Sender or Recipient Name" />
+            <button id="searchShipmentBtn">Search</button>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

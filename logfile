@@ -1,0 +1,12 @@
+2025-05-22 14:20:53.055 UTC [50469] LOG:  starting PostgreSQL 16.9 (Ubuntu 16.9-1.pgdg20.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0, 64-bit
+2025-05-22 14:20:53.056 UTC [50469] LOG:  listening on IPv6 address "::1", port 5432
+2025-05-22 14:20:53.056 UTC [50469] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-05-22 14:20:53.059 UTC [50469] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2025-05-22 14:20:53.066 UTC [50472] LOG:  database system was shut down at 2025-05-22 14:20:40 UTC
+2025-05-22 14:20:53.081 UTC [50469] LOG:  database system is ready to accept connections
+2025-05-22 14:25:53.165 UTC [50470] LOG:  checkpoint starting: time
+2025-05-22 14:25:57.293 UTC [50470] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.111 s, sync=0.007 s, total=4.128 s; sync files=11, longest=0.002 s, average=0.001 s; distance=261 kB, estimate=261 kB; lsn=0/15233E8, redo lsn=0/15233B0
+2025-05-22 14:40:53.586 UTC [50470] LOG:  checkpoint starting: time
+2025-05-22 14:41:59.414 UTC [58874] ERROR:  relation "packages" does not exist at character 15
+2025-05-22 14:41:59.414 UTC [58874] STATEMENT:  SELECT * FROM packages;
+2025-05-22 14:42:29.006 UTC [50470] LOG:  checkpoint complete: wrote 953 buffers (5.8%); 0 WAL file(s) added, 0 removed, 0 recycled; write=95.314 s, sync=0.100 s, total=95.420 s; sync files=322, longest=0.007 s, average=0.001 s; distance=4344 kB, estimate=4344 kB; lsn=0/1961590, redo lsn=0/1961558
