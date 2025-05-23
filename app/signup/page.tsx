@@ -65,7 +65,7 @@ export default function SignupPage() {
         />
         <button type="submit">Sign Up</button>
       </form>
-      <button type="button" onClick={() => router.push("/login")}>
+      <button type="button" onClick={() => router.push("/")}>
         login
       </button>
     </div>

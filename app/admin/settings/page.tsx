@@ -62,6 +62,11 @@ export default function AdminSettings() {
 
   const handleUpdateUser = async (userId: number, updates: Partial<User>) => {
     try {
+      // Convert privilege value to boolean
+      if (updates.priv !== undefined) {
+        updates.priv = Boolean(updates.priv);
+      }
+      
       const updatedUser = await userService.update(userId, updates);
       if (updatedUser) {
         setUsers(users.map(user => user.id === userId ? updatedUser : user));
@@ -86,7 +91,17 @@ export default function AdminSettings() {
   const handleCreateMethod = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const created = await methodService.create(newMethod);
+      if (!newMethod.name || newMethod.cost === undefined) {
+        setError("Please fill in all required fields for the new shipping method.");
+        return;
+      }
+
+      const methodData = {
+        name: newMethod.name,
+        cost: Number(newMethod.cost)
+      };
+
+      const created = await methodService.create(methodData);
       if (created) {
         setMethods([...methods, created]);
         setShowMethodModal(false);

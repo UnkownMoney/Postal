@@ -10,8 +10,8 @@ export class SupabaseShipmentService extends BaseService<Shipment> {
       .from(this.tableName)
       .select(`
         *,
-        sender:user(*),
-        method:method(*)
+        sender:user!sender(email, address),
+        method:method!method(name, cost)
       `)
       .order("created_at", { ascending: false });
 
@@ -27,10 +27,10 @@ export class SupabaseShipmentService extends BaseService<Shipment> {
       .from(this.tableName)
       .select(`
         *,
-        sender:user(*),
-        method:method(*)
+        sender:user!sender(email, address),
+        method:method!method(name, cost)
       `)
-      .eq("user_id", userId)
+      .eq("sender", userId)
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -45,8 +45,8 @@ export class SupabaseShipmentService extends BaseService<Shipment> {
       .from(this.tableName)
       .select(`
         *,
-        sender:user(*),
-        method:method(*)
+        sender:user!sender(email, address),
+        method:method!method(name, cost)
       `)
       .eq("status", status)
       .order("created_at", { ascending: false });
@@ -65,8 +65,8 @@ export class SupabaseShipmentService extends BaseService<Shipment> {
       .eq("id", shipmentId)
       .select(`
         *,
-        sender:user(*),
-        method:method(*)
+        sender:user!sender(email, address),
+        method:method!method(name, cost)
       `)
       .single();
 

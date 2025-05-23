@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS shipments (
     weight DECIMAL(10,2) NOT NULL,
     status text NOT NULL,
     method INTEGER NOT NULL REFERENCES methodt(id),
-    user_id INTEGER NOT NULL REFERENCES users(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
